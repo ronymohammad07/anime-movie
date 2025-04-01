@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="upload.css">
+
+    <!-- external css link -->
+    <link rel="stylesheet" href="home-page.css">
+
+    <!-- view page css link -->
+    <link rel="stylesheet" href="view.css">
+
+</head>
+
+<body>
+    <!-- <img src="img/background-img.jpg" alt=""> -->
+    <!-- navbar section -->
+    <header>
+        <nav>
+
+            <div class="nav-section">
+                <!-- section one -->
+                <div class="nav-section-one">
+                    <!-- mobile device icon only show small device-->
+                    <div onclick=MenuShow() class="small-device-icon" id="menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px"
+                            fill="#ffffff">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg>
+                    </div>
+
+                    <!-- close icon -->
+                    <div class="close-icon" id="close" onclick=Close()>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px"
+                            fill="#ffffff">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </div>
+                    <!-- nav logo -->
+                    <div class="nav-logo">
+                        <a href="http://127.0.0.1:5500/home-page.html">
+                            <span>
+                                anime-movies
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- nav search bar -->
+                    <div class="nav-search nav-search-mobile" ">
+                        <div class=" nav-search-one">
+                        <span>
+                            movies
+                        </span>
+
+                        <!-- down-array icon -->
+                        <i class="down-array">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#ffffff">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                            </svg>
+
+                            <div class="ul">
+                                <a href="">
+                                    <li class="ul-1">Movies</li>
+                                </a>
+                                <a href="">
+                                    <li class="ul-2">Series</li>
+                                </a>
+                            </div>
+                        </i>
+
+                        <!-- navbar search input -->
+                        <input type="text" name="" id="" class="nav-input" placeholder="Search Here....">
+
+                        <!-- search icon
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg> -->
+                    </div>
+                    <!-- setting and logout -->
+                    <div class="setting-logout">
+                        <!-- setting icon -->
+
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#ffffff">
+                                    <path
+                                        d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                                </svg>
+                            </i>
+                        </a>
+                        <!-- logout icon -->
+                        <a href="#">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#ffffff">
+                                    <path
+                                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                                </svg>
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile section search section only show mobile device -->
+            <!-- nav search bar -->
+            <div class=" mobile-show">
+                <div class="nav-search-one">
+                    <span>
+                        movies
+                    </span>
+
+                    <!-- down-array icon -->
+                    <i class="down-array">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#ffffff">
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+
+                        <div class="ul">
+                            <a href="">
+                                <li class="ul-1">Movies</li>
+                            </a>
+                            <a href="">
+                                <li class="ul-2">Series</li>
+                            </a>
+                        </div>
+                    </i>
+
+                    <!-- navbar search input -->
+                    <input type="text" name="" id="" class="nav-input" placeholder="Search Here....">
+
+                    <!-- search icon
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg> -->
+                </div>
+                <!-- setting and logout -->
+                <div class="setting-logout">
+                    <!-- setting icon -->
+
+                    <a href="#">
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#ffffff">
+                                <path
+                                    d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                            </svg>
+                        </i>
+                    </a>
+                    <!-- logout icon -->
+                    <a href="#">
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#ffffff">
+                                <path
+                                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                            </svg>
+                        </i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- section two -->
+            <div class="nav-section-two" id="nav-section-two-ms">
+                <div class="all-list">
+                    <a href="#">
+                        <li class="first-li-color"><span>
+                                Series
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#ffffff">
+                                <path
+                                    d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z" />
+                            </svg>
+                        </li>
+                    </a>
+
+                    <li class="genres">
+                        Genres
+                        <span class="svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"
+                                fill="#ffffff">
+                                <path d="m280-400 200-200 200 200H280Z" />
+                            </svg>
+                        </span>
+                        <div class="hidden-list">
+                            <ol>
+                                <a href="">
+                                    <li>Action</li>
+                                </a>
+
+                                <a href="">
+                                    <li>Adventure</li>
+                                </a><a href="">
+                                    <li>Comedy</li>
+                                </a>
+                                <a href="">
+                                    <li>Crime</li>
+                                </a><a href="">
+                                    <li>Documentary</li>
+                                </a><a href="">
+                                    <li>Drama</li>
+                                </a><a href="">
+                                    <li>Family</li>
+                                </a><a href="">
+                                    <li>Fantasy</li>
+                                </a><a href="">
+                                    <li>History</li>
+                                </a>
+                                <a href="">
+                                    <li>
+                                        Home
+                                    </li>
+                                </a>
+                                <a href="">
+                                    <li>Home</li>
+                                </a>
+
+                                <a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="genres">Animation
+                        <span class="svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"
+                                fill="#ffffff">
+                                <path d="m280-400 200-200 200 200H280Z" />
+                            </svg>
+                        </span>
+                        <div class="hidden-list">
+                            <ol>
+                                <a href="">
+                                    <li>Action</li>
+                                </a>
+
+                                <a href="">
+                                    <li>Adventure</li>
+                                </a><a href="">
+                                    <li>Comedy</li>
+                                </a>
+                                <a href="">
+                                    <li>Crime</li>
+                                </a><a href="">
+                                    <li>Documentary</li>
+                                </a><a href="">
+                                    <li>Drama</li>
+                                </a><a href="">
+                                    <li>Family</li>
+                                </a><a href="">
+                                    <li>Fantasy</li>
+                                </a><a href="">
+                                    <li>History</li>
+                                </a>
+                                <a href="">
+                                    <li>
+                                        Home
+                                    </li>
+                                </a>
+                                <a href="">
+                                    <li>Home</li>
+                                </a>
+
+                                <a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a><a href="">
+                                    <li>Home</li>
+                                </a>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>English</li>
+                    <li>Hindi</li>
+                    <li>Others</li>
+                    <li>Tamil</li>
+                    <li>Dul</li>
+                    <li>Language</li>
+                    <li>K-Drama</li>
+                    <li>C-Drama</li>
+                    <li>J-Animation</li>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- upload section -->
+    <div class="upload-section">
+        <div class="inner-upload-section">
+            <!-- movie upload form -->
+
+            <form action="" method="post">
+                <div class="new-post">
+                    <span>
+                        New Post
+                    </span>
+
+                    <!-- bottom border div -->
+                    <div class="bottom-border">
+
+                    </div>
+                    <!-- <hr> -->
+                </div>
+
+                <!-- movie name -->
+                <div class="movie-name">
+                    <label for="movie-name"></label>
+                    <input type="text" name="movie-name" id="" placeholder="Movie Name..">
+                </div>
+
+                <!-- movie image -->
+                <div class="movie-image">
+                    <label for="movie-image">
+                    </label>
+                    <input type="file" name="movie-image" id="image" style="display: none;">
+                    <!-- movie image section -->
+                    <div class="movie-image-div">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#a8b3cf">
+                            <path
+                                d="M480-480ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h320v80H200v560h560v-320h80v320q0 33-23.5 56.5T760-120H200Zm40-160h480L570-480 450-320l-90-120-120 160Zm440-320v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
+                        </svg>
+                        <span>Upload Image</span>
+                    </div>
+                </div>
+
+                <!-- movie description -->
+
+                <div class="movie-description">
+                    <!-- write section -->
+                    <div class="new-post">
+                        <span>
+                            Write
+                        </span>
+
+                        <!-- bottom border div -->
+                        <div class="bottom-border">
+
+                        </div>
+                        <!-- <hr> -->
+                    </div>
+
+                    <!-- movie description -->
+                    <div class="inner-movie-description">
+                        <label for="movie-description"></label>
+                        <textarea name="" id="" placeholder="Write Movie description.."></textarea>
+                    </div>
+                </div>
+
+                <!-- upload movie file -->
+
+                <div class="movie-image upload-movie">
+                    <label for="movie-image"></label>
+                    <input style='display: none;' type="file" name="movie-image" id="">
+                    <!-- movie image section -->
+                    <div class="movie-image-div">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#a8b3cf">
+                            <path
+                                d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
+                        </svg>
+                        <span>Upload movie</span>
+                    </div>
+                </div>
+                <!-- <div class="upload-movie">
+                    <label for="upload-movie"></label>
+                    <input type="file" name="upload-movie" id="">
+                </div> -->
+
+                <!-- save button -->
+                <div class="save-btn">
+                    <button type="submit" class="btn">
+                        upload
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+<!-- external js link -->
+<script src="upload.js"></script>
+
+<!-- home page javascript -->
+<script src="home-page.js"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload and Display Image</title>
+</head>
+<body>
+
+  <!-- Image upload section -->
+  <div class="movie-image">
+    <label for="movie-image"></label>
+    <input type="file" name="movie-image" id="image" style="display: none;">
+    <!-- movie image section -->
+    <div class="movie-image-div" style="cursor: pointer;">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a8b3cf">
+        <path d="M480-480ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h320v80H200v560h560v-320h80v320q0 33-23.5 56.5T760-120H200Zm40-160h480L570-480 450-320l-90-120-120 160Zm440-320v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
+      </svg>
+      <span>Upload Image</span>
+    </div>
+  </div>
+
+  <!-- Section where the uploaded image will be displayed -->
+  <div class="image-preview">
+    <h3>Preview Image:</h3>
+    <img id="uploaded-image" src="" alt="Uploaded Image" style="max-width: 300px; display: none;">
+  </div>
+
+  <div>
+    <h3>Another image element to use the uploaded image:</h3>
+    <img id="another-img" src="" alt="Another image preview" style="max-width: 300px;">
+  </div>
+
+  <script>
+    // Trigger file input when clicking on .movie-image-div
+    document.querySelector('.movie-image-div').addEventListener('click', function() {
+      document.getElementById('image').click();
+    });
+
+    // Listen for changes on the file input
+    document.getElementById('image').addEventListener('change', function() {
+      const file = this.files[0]; // Get the first file uploaded
+      if (file) {
+        const reader = new FileReader();
+
+        // When the file is successfully read, show it in the image preview
+        reader.onload = function(e) {
+          // Show the uploaded image in the preview section
+          const imgElement = document.getElementById('uploaded-image');
+          imgElement.src = e.target.result; // Set the image source to the uploaded file
+          imgElement.style.display = 'block'; // Make the image visible
+
+          // Also use the uploaded image in another image element
+          document.getElementById('another-img').src = e.target.result; // Set the uploaded image to another place
+        };
+
+        // Read the file as a data URL
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+  
+</body>
+</html>

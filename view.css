@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+/* movie details section */
+.main-container {
+    width: 95%;
+    /* background-color: #8181812b; */
+    background-color: #000000a8;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(5px);
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+.main-container .inner-container {
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+    grid-template-areas:
+        ' one two three';
+    /* gap: 1rem; */
+    column-gap: 1rem;
+    color: white;
+}
+
+/* card-1  */
+.card-1 {
+    grid-area: one;
+}
+
+.card-1 img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* .card-2 */
+.card-2 {
+    grid-area: two;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+/* movie name */
+.card-2 .text {
+    padding-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+/* movie language section */
+.m-language {
+    margin: 0.5rem 0 1.7rem;
+}
+
+.m-language span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin: 8px  8px 0 0;
+}
+
+.m-language span a:hover {
+    color: yellowgreen;
+}
+
+.m-language span:active {
+    background-color: white;
+    color: gray;
+}
+
+.m-language span a:active {
+    /* background-color: white; */
+    color: gray;
+}
+
+/* category section */
+.category span a {
+    /* font-size: 1.1rem; */
+    font-weight: bold;
+}
+
+/* movie description */
+.description {
+    margin: 2.5rem 0 2rem;
+}
+
+.description p {
+    /* font-size: 1rem; */
+    text-align: justify;
+    /* width: 560.80px;
+    height: 100px;
+    white-space: nowrap;
+    overflow-y: hidden;
+    text-overflow: ellipsis; */
+}
+
+/* card-3 */
+.card-3 {
+    grid-area: three;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-3 .s-wp-d {
+    width: 240px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-3 .s-wp-d:hover {
+    border-color: yellowgreen;
+}
+
+.card-3 .s-wp-d:active {
+    border-color: rgb(29, 28, 28);
+}
+
+.card-3 .s-wp-d:hover a {
+    /* font-weight: bolder; */
+    color: yellowgreen;
+}
+
+.card-3 .s-wp-d:active a {
+    color: rgb(29, 28, 28);
+}
+
+
+/* mobile view  */
+
+@media (max-width: 480px) {
+    .main-container .inner-container{
+        grid-template-rows: auto auto 300px;
+        grid-template-areas: 
+            'one one one'
+            'two two two'
+            'three three three'
+        ;
+    }
+
+    /* card-1 */
+    .card-1 {
+        grid-area: one;
+        /* grid-column: 1/4; */
+        /* width: 681px; */
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-1 img{
+        width: 100%;
+        height: 100%;
+        /* height: 100%; */
+        /* height: 300px; */
+        object-fit: cover;
+    }
+
+    /* .card-2 */
+    .card-2 {
+        grid-column: 1/4;
+    }
+
+    /* movie language section */
+    .m-language{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* movie description */
+    
+    /* card-3 */
+    .card-3{
+        margin: 0 auto;
+    }
+
+    /* .card-3 */
+    .card-3 {
+        grid-column: 1/4;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .main-container .inner-container{
+        grid-template-rows: auto auto 300px;
+        grid-template-areas: 
+            'one one one'
+            'two two two'
+            'three three three'
+        ;
+    }
+
+    /* card-1 */
+    .card-1 {
+        /* grid-area: one; */
+        grid-column: 1/4;
+        /* width: 681px; */
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-1 img{
+        width: 100%;
+        height: 100%;
+        /* height: 100%; */
+        /* height: 300px; */
+        object-fit: cover;
+    }
+
+    /* .card-2 */
+    .card-2 {
+        grid-column: 1/4;
+    }
+
+    /* movie language section */
+    .m-language{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    /* .card-3 */
+    .card-3 {
+        grid-column: 1/4;
+    }
+
+    .card-3{
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    /* movie details section */
+    .main-container .inner-container {
+        display: grid;
+        grid-template-columns: 30% auto 25%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            ' one two three';
+        /* gap: 1rem; */
+        column-gap: 1rem;
+        color: white;
+    }
+    
+    /* card-2 */
+    .card-2{
+        grid-column: 2/4;
+    }
+    
+    /* movie language section */
+    .m-language{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-3{
+        grid-column: 1/4;
+        grid-row: 2/4;
+    }
+
+    .card-3 .s-wp-d{
+        margin: 0.3rem auto;
+    }
+}

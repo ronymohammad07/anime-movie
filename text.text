@@ -1,0 +1,24 @@
+@media (min-width: 769px) and (max-width: 1082px) {
+
+    /* movie details section */
+    .main-container{
+        width: 80%;
+    }
+    .main-container .inner-container {
+        display: grid;
+        grid-template-columns: 25% auto 25%;
+        /*  */
+    }
+
+    /* .card-2 */
+    /* movie language section */
+    .m-language{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* card-3 */
+    .card-3 .s-wp-d{
+        width: 172px;
+    }
+}

@@ -1,0 +1,185 @@
+/* upload section */
+.upload-section {
+    width: 50%;
+    background-color: #0e1217;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #a8b3cf;
+}
+
+.upload-section .inner-upload-section form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto);
+    /* height: 100vh; */
+    border: 1px solid #a8b3cf;
+
+}
+
+/* movie-text */
+.upload-section .inner-upload-section form .new-post {
+    grid-column: 1/2;
+    height: 53px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 0 1rem;
+    border-bottom: 1px solid #a8b3cf;
+    position: relative;
+    /* background-color: yellowgreen; */
+}
+
+.new-post span {
+    width: 112px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #20252d;
+    padding: 0.rem 0.5rem;
+    background-color: #2d323b;
+    text-align: center;
+    border-radius: 7px;
+    color: white;
+}
+
+/* only div */
+.bottom-border {
+    width: 65px;
+    height: 3px;
+    position: absolute;
+    top: 50px;
+    left: 32px;
+    background-color: white;
+}
+
+/* movie name */
+.upload-section .inner-upload-section form .movie-name {
+    grid-column: 1/2;
+    height: 53px;
+    margin: 1rem 1rem;
+    border-radius: 0.7rem;
+
+}
+
+.movie-name input:hover{
+    border-left: 2px solid white;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.movie-name input:active{
+    border-left: 2px solid red;
+    background-color: transparent;
+    color: white;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.movie-name input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: #20252d;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.7rem;
+    padding: 0 0.7rem;
+    /* margin-left: rem; */
+
+}
+
+
+
+.movie-name input::placeholder {
+    color: #a8b3cf;
+    font-size: 1rem;
+}
+
+/* movie image */
+.upload-section .inner-upload-section form .movie-image {
+    grid-column: 1/2;
+    width: 50%;
+    height: 120px;
+    border-radius: 2rem;
+    margin:1rem 1rem;
+    background-color: #20252d;
+}
+
+/* movie image section */
+.movie-image .movie-image-div {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: #20252d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #a8b3cf;
+    cursor: pointer;
+}
+
+/* movie description */
+.upload-section .inner-upload-section form .movie-description {
+    grid-column: 1/2;
+    height: 200px;
+    background-color: #20252d;
+    margin: 1rem 1rem;
+    
+}
+
+.movie-description .inner-movie-description {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.7rem;
+    background-color: #20252d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.movie-description .inner-movie-description textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    outline: none;
+    background-color: #20252d;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.7rem;
+    padding: 0 0.7rem;
+    margin-top: 1rem;
+    resize: both;
+    scrollbar-width: none;
+}
+
+
+/* upload movie */
+.upload-section .inner-upload-section form .upload-movie {
+    grid-column: 1/2;
+    height: 80px;
+    background-color: #20252d;
+    margin: 3.5rem 1rem 0;
+    cursor: pointer;
+}
+
+/* save button */
+.upload-section .inner-upload-section form .save-btn {
+    grid-column: 1/2;
+    height: 53px;
+    /* background-color: #20252d; */
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin: 1rem 1rem;
+}
+
+.save-btn button{
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #d74cf6;
+}

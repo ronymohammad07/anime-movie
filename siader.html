@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 600px;
+        height: 300px;
+        margin: auto;
+        overflow: hidden;
+        /* Hide overflow for sliding effect */
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+        /* Smooth sliding effect */
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure images cover the area without distortion */
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+
+<body>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="img/HONEY-LEMON-SODA.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/HONEY-LEMON-SODA.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/HONEY-LEMON-SODA.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        // Update the currentIndex based on button click
+        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+
+        // Move the carousel by adjusting the transform property
+        const carousel = document.querySelector('.carousel');
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Optional: Auto slide every 3 seconds
+    setInterval(() => {
+        moveSlide(1);  // Move to the next slide every 3 seconds
+    }, 3000);
+
+</script>
+
+</html>
